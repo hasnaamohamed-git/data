@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Test</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .test-section { background: #f0f0f0; padding: 20px; margin: 10px 0; }
+        img { max-width: 300px; border: 1px solid #ccc; }
+    </style>
+</head>
+<body>
+    <h1>🔥 SIMPLE TEST PAGE 🔥</h1>
+    
+    <div class="test-section">
+        <h2>Text Test</h2>
+        <p>If you can see this text, HTML is working!</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Image Test</h2>
+        <p>Testing first image:</p>
+        <img src="d1.png" alt="Test Image d1.png">
+        <p>If you see an image above, images are working!</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>CSS Test</h2>
+        <p style="color: red; font-size: 20px;">This text should be RED and LARGE if CSS is working!</p>
+    </div>
+    
+    <div class="test-section">
+        <h2>Debug Info</h2>
+        <p>Current URL: <span id="current-url"></span></p>
+        <p>User Agent: <span id="user-agent"></span></p>
+    </div>
+    
+    <script>
+        document.getElementById('current-url').textContent = window.location.href;
+        document.getElementById('user-agent').textContent = navigator.userAgent;
+        console.log('JavaScript is working!');
+        console.log('Page loaded at:', new Date());
+    </script>
+</body>
+</html>

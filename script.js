@@ -52,6 +52,25 @@ document.addEventListener('DOMContentLoaded', function() {
     const images = document.querySelectorAll('.analysis-image');
     
     images.forEach(img => {
+        // Add error handling for images
+        img.addEventListener('error', function() {
+            console.error('Failed to load image:', this.src);
+            this.style.border = '2px dashed #ccc';
+            this.style.padding = '20px';
+            this.style.backgroundColor = '#f9f9f9';
+            this.style.color = '#666';
+            this.style.textAlign = 'center';
+            this.style.display = 'block';
+            this.style.minHeight = '200px';
+            this.style.lineHeight = '200px';
+            this.alt = 'Image not found: ' + this.src;
+        });
+        
+        // Add load success handler
+        img.addEventListener('load', function() {
+            console.log('Successfully loaded image:', this.src);
+        });
+        
         // Add click to zoom functionality
         img.addEventListener('click', function() {
             if (this.style.transform === 'scale(1.5)') {

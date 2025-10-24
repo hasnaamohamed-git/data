@@ -3,286 +3,311 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dillard's Cosmetics Data Analysis</title>
+    <title>Dillard's Cosmetics Data Analysis - SQL & Tableau Case Study</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6; 
-            color: #333; 
-            background: #f8f9fa;
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
         }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0; text-align: center; }
-        .header h1 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-        .header p { font-size: 1.2rem; opacity: 0.9; }
-        .nav { background: white; padding: 1rem 0; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        .nav ul { list-style: none; display: flex; justify-content: center; flex-wrap: wrap; gap: 2rem; }
-        .nav a { text-decoration: none; color: #555; font-weight: 500; padding: 0.5rem 1rem; border-radius: 4px; }
-        .nav a:hover { background: #667eea; color: white; }
-        .main { padding: 3rem 0; }
-        .section { margin-bottom: 3rem; }
-        .section h2 { font-size: 2rem; color: #2d3748; margin-bottom: 1.5rem; text-align: center; }
-        .card { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); margin-bottom: 2rem; }
-        .card p { font-size: 1.1rem; line-height: 1.7; margin-bottom: 1rem; }
-        .card h3 { color: #4a5568; margin: 1.5rem 0 1rem 0; }
-        .card ul { margin-left: 1.5rem; margin-bottom: 1rem; }
-        .card li { margin-bottom: 0.5rem; }
-        .img-container { text-align: center; margin: 2rem 0; }
-        .img-container img { max-width: 100%; height: auto; border-radius: 6px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
-        .img-caption { font-style: italic; color: #666; margin-top: 0.5rem; font-size: 0.9rem; }
-        .course-box { background: #f7fafc; padding: 1.5rem; border-radius: 6px; border-left: 4px solid #667eea; margin: 1rem 0; }
-        .insights-box { background: #f0fff4; border: 1px solid #9ae6b4; padding: 1.5rem; border-radius: 6px; margin: 1.5rem 0; }
-        .footer { background: #2d3748; color: white; text-align: center; padding: 2rem 0; }
-        @media (max-width: 768px) {
-            .header h1 { font-size: 2rem; }
-            .nav ul { flex-direction: column; gap: 0.5rem; }
-            .card { padding: 1.5rem; }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+            border-bottom: 3px solid #007acc;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #007acc;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 5px;
+        }
+        h3 {
+            color: #555;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .image-placeholder {
+            background-color: #f0f0f0;
+            border: 2px dashed #ccc;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            color: #666;
+            font-style: italic;
+        }
+        ul, ol {
+            margin-left: 20px;
+        }
+        li {
+            margin-bottom: 8px;
+        }
+        .highlight {
+            background-color: #e7f3ff;
+            padding: 15px;
+            border-left: 4px solid #007acc;
+            margin: 15px 0;
+        }
+        .course-section {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 15px 0;
         }
     </style>
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <h1>Dillard's Cosmetics Data Analysis</h1>
-            <p>A Comprehensive SQL & Tableau Case Study</p>
-        </div>
-    </header>
+    <div class="container">
+        <h1>Dillard's Cosmetics Data Analysis</h1>
+        <p style="text-align: center; font-size: 18px; color: #666;">A Comprehensive SQL & Tableau Case Study</p>
 
-    <nav class="nav">
-        <div class="container">
+        <div class="section">
+            <h2>Abstract</h2>
+            <p>Advanced technologies have transformed how accounting professionals handle data, making accounting increasingly a STEM-related field that requires strong data analytics and technology skills. This case study gives students hands-on experience using SQL and Tableau to perform real-world data analysis. It covers tasks like data extraction with SQL, data visualization using word clouds, geographic maps, and boxplots, data grouping through clustering, and communicating insights via interactive dashboards and storytelling. The goal is to help students appreciate how SQL and Tableau can be powerful tools for analyzing and visualizing large datasets, while developing a strong data analytics mindset.</p>
+        </div>
+
+        <div class="section">
+            <h2>Case Study</h2>
+            <p>Dillard's, Inc. is a luxury department store chain headquartered in Little Rock, Arkansas, founded in 1938 by William T. Dillard. It expanded rapidly through acquisitions in the 1960s and became a public company in 1969. Today, it operates about 282 stores across 29 states, with Texas (57) and Florida (42) having the most locations, all still under family control.</p>
+            
+            <p>The company has long collected daily transaction data from all stores. The CEO has tasked the cosmetics department manager with preparing a performance report analyzing key metrics — total sales, discount rate, profit margin, sales growth rate, and return rate — and to suggest one additional analysis. Using Microsoft SQL Server, the goal is to provide an insightful review of the Christmas season to help enhance the company's holiday sales strategy.</p>
+        </div>
+
+        <div class="section">
+            <h2>Project Summary: Dillard's Cosmetics Data Analysis</h2>
+            <p>We analyzed Dillard's cosmetics data using SQL and Tableau. After preparing and cleaning the dataset, two new fields (Discount Rate and Profit Margin) were created.</p>
+            
+            <h3>Key analyses included:</h3>
             <ul>
-                <li><a href="#abstract">Abstract</a></li>
-                <li><a href="#case-study">Case Study</a></li>
-                <li><a href="#project-summary">Project Summary</a></li>
-                <li><a href="#prerequisites">Prerequisites</a></li>
-                <li><a href="#instructions">Instructions</a></li>
-                <li><a href="#conclusion">Conclusion</a></li>
+                <li><strong>Geographic Map:</strong> Compared state discount rates and profits across months.</li>
+                <li><strong>Word Cloud:</strong> Highlighted top-selling brands in Florida and Louisiana with promotion suggestions.</li>
+                <li><strong>Box Plots:</strong> Explored discount and sales distributions to check their relationship.</li>
+                <li><strong>Clustering:</strong> Grouped products into "Sales Winners" and "Profit Winners" and identified outliers.</li>
+                <li><strong>Sales Trends:</strong> Tracked monthly sales over years and forecasted next-year performance.</li>
+                <li><strong>Return Analysis:</strong> Compared return rates with industry averages.</li>
+                <li><strong>Story & Dashboard:</strong> Built an interactive Tableau dashboard and story to summarize insights.</li>
+            </ul>
+            
+            <p><strong>Deliverable:</strong> A presentation with all visualizations and key insights.</p>
+        </div>
+
+        <div class="section">
+            <h2>Case Prerequisites</h2>
+            <p>Students learned SQL basics and Tableau for data analysis. In week 11, they started the Dillard's case as a final individual project, submitted and presented in week 13. Pre- and post-tests showed clear improvement in SQL and Tableau skills. The case helps assess analytical abilities and can be used as a final or in-class project.</p>
+        </div>
+
+        <div class="section">
+            <h2>Applying the Case in Different Courses</h2>
+            
+            <div class="course-section">
+                <h3>Financial Accounting:</h3>
+                <p>Instructors can simplify the case by:</p>
+                <ul>
+                    <li>Skipping data extraction and cleaning, providing the dataset in Excel.</li>
+                    <li>Selecting only one or two analyses from the full list.</li>
+                    <li>Assessing students' skill levels first — if they are not familiar with Tableau, they can be trained or use Excel instead.</li>
+                </ul>
+            </div>
+
+            <div class="course-section">
+                <h3>Managerial Accounting:</h3>
+                <p>KPI (Key Performance Indicator) analysis can be added using Tableau to evaluate whether the company meets its targets, with more focus on discussing results and providing managerial recommendations.</p>
+            </div>
+
+            <div class="course-section">
+                <h3>Graduate Courses:</h3>
+                <p>Students perform more advanced tasks, such as:</p>
+                <ul>
+                    <li>Creating new variables or pivot columns using SQL instead of Tableau.</li>
+                    <li>Interpreting statistical results from clustering analysis.</li>
+                    <li>Merging Dillard's balance sheet data to perform financial ratio analysis.</li>
+                    <li>Reviewing analyses to detect and explain outliers.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Step-by-step Instructions</h2>
+            
+            <h3>a) Get UML for the Dillard's dataset</h3>
+            <p>Log in to the remote desktop of the University of Arkansas > Open Microsoft SQL Server Management Studio > find the dataset WCOB_Dillards and expand it > right-click Database Diagrams > click New Database Diagrams > add all the tables included in this dataset to the diagram. The database diagram is as shown below:</p>
+            <div class="image-placeholder">
+                [Image d1: Database UML Diagram - Replace this with d1.png]
+            </div>
+
+            <h3>b) Query data using SQL</h3>
+            <p>Log in to the remote desktop of the University of Arkansas > open Tableau Desktop > under the connect section, click Microsoft SQL Server > enter server and database information > click Sign In. Tableau will then bring you to the page Data Source. Under the Table section, double-click New Custom SQL > enter the following SQL statements:</p>
+            <div class="image-placeholder">
+                [Image d2: SQL Query Interface - Replace this with d2.png]
+            </div>
+            
+            <div class="highlight">
+                <h4>Common SQL Mistakes (Summary):</h4>
+                <p>Students often:</p>
+                <ul>
+                    <li>Misname calculated fields (e.g., using spaces instead of underscores).</li>
+                    <li>Use incorrect keys when joining tables.</li>
+                    <li>Forget to filter data for the COSMETICS department.</li>
+                    <li>Fail to exclude abnormal values or prevent division by zero.</li>
+                    <li>Use double quotes instead of single quotes for dates.</li>
+                </ul>
+            </div>
+
+            <h3>c) Adjust the data format</h3>
+            <p>Click Update Now to load data. <strong>Note:</strong> if students forget to adjust the data format for STATE, they won't be able to generate geographic maps.</p>
+
+            <h3>d) Create a geographic map to analyze the discount level of states</h3>
+            <h4>Analysis of the discount level of states during the Christmas Season (December 2015 to January 2016):</h4>
+            
+            <div class="image-placeholder">
+                [Image d3: Geographic map of state average discount rate for December 2015 - Replace this with d3.png]
+            </div>
+            <p>The geographic map above displays the state average discount rates of the cosmetic department for December 2015. It is noteworthy that the overall discount rate was relatively low in December, and the majority of states met the target discount rate of 5% for that month. These states include Montana, Wyoming, Nevada, Utah, Colorado, Kansas, Kentucky, Arizona, New Mexico, Texas, Louisiana, Mississippi, Alabama, and Florida.</p>
+
+            <div class="image-placeholder">
+                [Image d4: Geographic map of state average discount rate for January 2016 - Replace this with d4.png]
+            </div>
+            <p>As shown in the figure above, the majority of states offered more attractive discounts in January 2016, with only three states (Oklahoma, Arkansas, and Louisiana) meeting the target. Of note, the discount rate of Iowa experienced a significant jump, rising from 9.63% to 19.03%.</p>
+
+            <div class="highlight">
+                <h4>Key Insights:</h4>
+                <ul>
+                    <li>Treemaps may also be a good option.</li>
+                    <li>Stores in Iowa often offer higher discount rates, but their sales are usually much lower than stores in Texas. Based on the current results, higher discount rates are not necessarily associated with higher sales.</li>
+                    <li>Arkansas often offered the lowest average discount rates (3.3%) in December 2015, but their average profit margin is relatively low at 15.5%. In comparison, the average discount rate of stores in Ohio is 6.6% in the same month, but their average profit margin is 34.5%. Managers in Arkansas can consider consulting the managers in Ohio and see how Ohio reduces its operating expenses.</li>
+                    <li>Generally, the discount rates are lower in February, May, and October. Discount rates usually are higher during the Christmas Season.</li>
+                </ul>
+            </div>
+
+            <h3>e) Create a word cloud to analyze the total sales of cosmetic brands</h3>
+            <h4>Analysis of sales of cosmetic brands:</h4>
+            
+            <div class="image-placeholder">
+                [Image d5: Word cloud: total sales of cosmetic brands in Florida - Replace this with d5.png]
+            </div>
+            <p>As shown in the figure above, the most popular cosmetic brands in Florida are Clinique, Estee Lauder, Lancome, Mac, and Chanel Women. The sales of these five brands significantly surpass those of other brands. Additionally, among these top five, the sales of the top three brands (Clinique, Estee Lauder, Lancome) are notably higher compared to the other two.</p>
+
+            <div class="image-placeholder">
+                [Image d6: Word cloud: total sales of cosmetic brands in Louisiana - Replace this with d6.png]
+            </div>
+            <p>As shown in the figure above, the most popular cosmetic brands in Louisiana are Clinique, Estee Lauder, Lancome, Mac, and Chanel Women. It's worth noting that the top 5 popular brands in Louisiana are the same as those in Florida. However, the sales difference between the top 5 brands and other brands is smaller in Louisiana. Additionally, Chanel women's products are less popular in Louisiana compared to Florida.</p>
+
+            <div class="highlight">
+                <h4>Key Insights:</h4>
+                <ul>
+                    <li>Highlight tables and tree maps can also be used to present the sales of different brands.</li>
+                    <li>Estée Lauder, Lancôme, and Clinique are generally the most popular brands across different states. These three brands typically account for a significant portion of sales in most states. Managers should ensure adequate stock levels for these brands. Additionally, MAC is also popular in many states. Other states might consider offering promotional activities, such as providing trial samples of Mac products to attract more customers and boost sales.</li>
+                    <li>The top three popular cosmetic brands in Arkansas are Estee Lauder, Lancome and Clinique. First, these three brands are generally popular, well-known brands in the U.S. Second, the discount rates of these three brands are generally low in Arkansas, showing customers are not attracted by the high discount rates.</li>
+                    <li>A word cloud can also be used to analyze the sales and profit margins of different brands. Additionally, it can present sales, discount rates, or profit margins for various tender types, regions, or departments.</li>
+                </ul>
+            </div>
+
+            <h3>f) Create a graph for box-and-whisker plots and analyze the distribution of the discount rate of different states per weekday</h3>
+            
+            <div class="image-placeholder">
+                [Image d7: Box-and-Whisker plots: state average discount rates per weekday - Replace this with d7.png]
+            </div>
+            <p>The figure above illustrates the distribution of state average discount rates per weekday. It reveals that the majority of states meet the target of 5% excluding Iowa, with fluctuations mostly ranging between 0.7% and 3.7%. However, on Thursdays and Fridays, the discount rates are notably higher with a wider dispersion.</p>
+            <p>The average discount rates in Iowa are consistently higher than in other states. Conversely, the average discount rates in Arkansas and for online sales are lower than those in other states.</p>
+
+            <div class="image-placeholder">
+                [Image d8: Box-and-whisker plots: state total sales per weekday - Replace this with d8.png]
+            </div>
+            <p>The figure above displays the distribution of state total sales per weekday. It is interesting to note that despite the significantly higher discount rates offered on Thursdays and Fridays, it did not result in higher sales on Thursdays. Surprisingly, the sales on Saturdays are noticeably higher with lower discount rates. Moreover, there seems to be no apparent cause-and-effect relationship between discount rates and total sales.</p>
+            <p>While many stores offer higher discounts on Thursdays, sales on these days are usually lower than on Fridays and Saturdays. This may be due to a higher volume of customers on Saturday. In this case, managers might consider increasing the discount rates on Thursdays to boost the profit margin and implementing promotional activities on Saturdays to further enhance sales.</p>
+
+            <h3>g) Clustering analysis</h3>
+            
+            <div class="image-placeholder">
+                [Image d9: Clustering analysis: brand clusters - Replace this with d9.png]
+            </div>
+            <p>The figure above presents the clustering analysis of cosmetic brands based on the average profit margins and total sales. There are four clusters.</p>
+
+            <div class="image-placeholder">
+                [Image d10: Clustering analysis: brand clusters (excluding the outlier) - Replace this with d10.png]
+            </div>
+            <p>The profit margin of Carol's Daughter is abnormally low. The figure above presents the same analysis, excluding the outlier Carol's Daughter.</p>
+
+            <div class="highlight">
+                <h4>Cluster Analysis:</h4>
+                <ul>
+                    <li><strong>Cluster 1: Profit Winners</strong> - are highly profitable but experience low sales. To attract new customers, our company could consider offering discounts or providing free samples of these products. Additionally, we can send free samples of these products to customers who purchase items from the Sales Winners cluster.</li>
+                    <li><strong>Cluster 2: Sales winners</strong> - are the most popular brands. To further capitalize on their popularity, our company can strategically place these products in prominent store locations or feature them prominently on the cosmetic products' webpage to attract a larger customer base. Given the mid-level profit margin, instead of offering discounts, our company could consider providing more generous gifts to incentivize purchases.</li>
+                    <li>We can also conduct cluster analysis to analyze customers' behaviors. We can better understand the demands of different groups of customers to provide customized services.</li>
+                </ul>
+            </div>
+
+            <h3>h) Trend analysis</h3>
+            
+            <div class="image-placeholder">
+                [Image d11: Trend analysis of sales growth rate - Replace this with d11.png]
+            </div>
+            <p>Sales fluctuated significantly between January and August 2015, then increased rapidly after August until the end of the year. Although the sales growth rates decreased between January and August 2016, the decline was smoother compared to 2015.</p>
+
+            <div class="highlight">
+                <h4>Key Insights:</h4>
+                <ul>
+                    <li>Since we only have partial data for October 2016 and missing data for November and December 2016, we can only compare the sales growth rate between January and October for 2015 and 2016. We observed that sales generally decreased from January to August in both 2015 and 2016.</li>
+                    <li>The sales growth rates dropped sharply in March and August 2015, but not in 2016. These two declines in 2015 followed sales increases in February and June. The drops may have been caused by the cessation of promotional activities offered in February and June 2015. This issue appears to have been addressed in 2016.</li>
+                    <li>Based on the sales growth rates for 2015 and 2016, we can predict that the sales growth rate for February 2017 may be close to 20%.</li>
+                    <li>The line chart is especially good at discovering trends.</li>
+                    <li>We can apply trend analysis to examine the trends in sales volume, profit growth, and other financial data.</li>
+                    <li>We can use the word cloud to compare the sales growth rates of different brands. Additionally, we can use the geographic map to compare the sales growth rate of different states.</li>
+                </ul>
+            </div>
+
+            <h3>i) Return rate analysis</h3>
+            
+            <div class="image-placeholder">
+                [Image d12: Return rate analysis - Replace this with d12.png]
+            </div>
+            <p>Dillard's cosmetic products' return rates are lower than the industry average in most months, excluding January. This is better than expected. The higher return rates in January are understandable, as it follows Christmas and many customers may need to return or exchange gifts.</p>
+            <p>The return rates remain stable, ranging from 3% to 4% between February and October. However, as the discount and holiday seasons arrive, the return rates increase and then drop again in February.</p>
+
+            <div class="image-placeholder">
+                [Image d14: Return rate by tender types - Replace this with d14.png]
+            </div>
+            <p>The figure above presents the return rates of different types of payments. It showed the return rates of gift card transactions are much higher than other types of payments.</p>
+
+            <h3>j) Create a dashboard</h3>
+            
+            <div class="image-placeholder">
+                [Image d15: Dashboard analysis for Texas - Replace this with d15.png]
+            </div>
+            <p>The dashboard analysis for Texas, utilizing the geographic map as a filter. The most popular cosmetic brands in Texas are Clinique, Estee Lauder, Lancome, Mac, and Chanel for Women. Notably, Chanel for Women boasts a higher profit margin compared to other popular brands, and Estee Lauder is particularly favored in Texas. Texas stores often offer substantial discounts on Fridays, with rates about three times higher than the average discount rate. Previous analysis indicates that sales are likely to stay at a similar level on Fridays, despite the stores offering greater discounts on that day. This implies that providing larger discounts may not significantly boost sales but could potentially impact customers' perception of product pricing.</p>
+            <p>As a result, our company may want to consider implementing other promotional strategies instead of relying solely on low discount offers. By exploring alternative approaches, we can maintain customers' confidence in product pricing while finding effective ways to drive sales and enhance overall customer satisfaction.</p>
+
+            <h3>k) Create a story</h3>
+            
+            <div class="image-placeholder">
+                [Image d16: Example of the story created in Tableau - Replace this with d16.png]
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Conclusion</h2>
+            <p>Modern accounting has evolved into a highly technological and analytical field. Its official inclusion within STEM disciplines:</p>
+            <ul>
+                <li>Reflects its current nature based on data analysis and programming.</li>
+                <li>Updates educational curricula to align with market demands.</li>
+                <li>Expands career opportunities for students.</li>
+                <li>Strengthens accountants' roles as experts in data analysis and tech-driven decision-making.</li>
             </ul>
         </div>
-    </nav>
 
-    <main class="main">
-        <div class="container">
-            
-            <section id="abstract" class="section">
-                <h2>Abstract</h2>
-                <div class="card">
-                    <p>Advanced technologies have transformed how accounting professionals handle data, making accounting increasingly a STEM-related field that requires strong data analytics and technology skills. This case study gives students hands-on experience using SQL and Tableau to perform real-world data analysis. It covers tasks like data extraction with SQL, data visualization using word clouds, geographic maps, and boxplots, data grouping through clustering, and communicating insights via interactive dashboards and storytelling. The goal is to help students appreciate how SQL and Tableau can be powerful tools for analyzing and visualizing large datasets, while developing a strong data analytics mindset.</p>
-                </div>
-            </section>
-
-            <section id="case-study" class="section">
-                <h2>Case Study</h2>
-                <div class="card">
-                    <p>Dillard's, Inc. is a luxury department store chain headquartered in Little Rock, Arkansas, founded in 1938 by William T. Dillard. It expanded rapidly through acquisitions in the 1960s and became a public company in 1969. Today, it operates about 282 stores across 29 states, with Texas (57) and Florida (42) having the most locations, all still under family control.</p>
-                    
-                    <p>The company has long collected daily transaction data from all stores. The CEO has tasked the cosmetics department manager with preparing a performance report analyzing key metrics — total sales, discount rate, profit margin, sales growth rate, and return rate — and to suggest one additional analysis. Using Microsoft SQL Server, the goal is to provide an insightful review of the Christmas season to help enhance the company's holiday sales strategy.</p>
-                </div>
-            </section>
-
-            <section id="project-summary" class="section">
-                <h2>Project Summary: Dillard's Cosmetics Data Analysis</h2>
-                <div class="card">
-                    <p>We analyzed Dillard's cosmetics data using SQL and Tableau. After preparing and cleaning the dataset, two new fields (Discount Rate and Profit Margin) were created.</p>
-                    
-                    <h3>Key analyses included:</h3>
-                    <ul>
-                        <li><strong>Geographic Map:</strong> Compared state discount rates and profits across months.</li>
-                        <li><strong>Word Cloud:</strong> Highlighted top-selling brands in Florida and Louisiana with promotion suggestions.</li>
-                        <li><strong>Box Plots:</strong> Explored discount and sales distributions to check their relationship.</li>
-                        <li><strong>Clustering:</strong> Grouped products into "Sales Winners" and "Profit Winners" and identified outliers.</li>
-                        <li><strong>Sales Trends:</strong> Tracked monthly sales over years and forecasted next-year performance.</li>
-                        <li><strong>Return Analysis:</strong> Compared return rates with industry averages.</li>
-                        <li><strong>Story & Dashboard:</strong> Built an interactive Tableau dashboard and story to summarize insights.</li>
-                    </ul>
-                    
-                    <p><strong>Deliverable:</strong> A presentation with all visualizations and key insights.</p>
-                </div>
-            </section>
-
-            <section id="prerequisites" class="section">
-                <h2>Case Prerequisites</h2>
-                <div class="card">
-                    <p>Students learned SQL basics and Tableau for data analysis. In week 11, they started the Dillard's case as a final individual project, submitted and presented in week 13. Pre- and post-tests showed clear improvement in SQL and Tableau skills. The case helps assess analytical abilities and can be used as a final or in-class project.</p>
-                </div>
-            </section>
-
-            <section id="instructions" class="section">
-                <h2>Step-by-step Instructions</h2>
-                
-                <div class="card">
-                    <h3>a) Get UML for the Dillard's dataset</h3>
-                    <p>Log in to the remote desktop of the University of Arkansas > Open Microsoft SQL Server Management Studio > find the dataset WCOB_Dillards and expand it > right-click Database Diagrams > click New Database Diagrams > add all the tables included in this dataset to the diagram.</p>
-                    <div class="img-container">
-                        <img src="d1.png" alt="Database UML Diagram">
-                        <div class="img-caption">Database UML Diagram</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>b) Query data using SQL</h3>
-                    <p>Log in to the remote desktop > open Tableau Desktop > connect to Microsoft SQL Server > enter server and database information > click Sign In > double-click New Custom SQL > enter SQL statements:</p>
-                    <div class="img-container">
-                        <img src="d2.png" alt="SQL Query Interface">
-                        <div class="img-caption">SQL Query Interface</div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>d) Geographic Map Analysis</h3>
-                    <p>Analysis of the discount level of states during the Christmas Season (December 2015 to January 2016):</p>
-                    
-                    <div class="img-container">
-                        <img src="d3.png" alt="Geographic map of state average discount rate for December 2015">
-                        <div class="img-caption">Geographic map of state average discount rate for December 2015</div>
-                    </div>
-                    <p>The geographic map displays the state average discount rates of the cosmetic department for December 2015. The overall discount rate was relatively low in December, and the majority of states met the target discount rate of 5% for that month.</p>
-
-                    <div class="img-container">
-                        <img src="d4.png" alt="Geographic map of state average discount rate for January 2016">
-                        <div class="img-caption">Geographic map of state average discount rate for January 2016</div>
-                    </div>
-                    <p>The majority of states offered more attractive discounts in January 2016, with only three states (Oklahoma, Arkansas, and Louisiana) meeting the target. The discount rate of Iowa experienced a significant jump, rising from 9.63% to 19.03%.</p>
-                </div>
-
-                <div class="card">
-                    <h3>e) Word Cloud Analysis</h3>
-                    
-                    <div class="img-container">
-                        <img src="d5.png" alt="Word cloud: total sales of cosmetic brands in Florida">
-                        <div class="img-caption">Word cloud: total sales of cosmetic brands in Florida</div>
-                    </div>
-                    <p>The most popular cosmetic brands in Florida are Clinique, Estee Lauder, Lancome, Mac, and Chanel Women. The sales of these five brands significantly surpass those of other brands.</p>
-
-                    <div class="img-container">
-                        <img src="d6.png" alt="Word cloud: total sales of cosmetic brands in Louisiana">
-                        <div class="img-caption">Word cloud: total sales of cosmetic brands in Louisiana</div>
-                    </div>
-                    <p>The most popular cosmetic brands in Louisiana are the same as Florida, but the sales difference between the top 5 brands and other brands is smaller in Louisiana.</p>
-                </div>
-
-                <div class="card">
-                    <h3>f) Box Plot Analysis</h3>
-                    
-                    <div class="img-container">
-                        <img src="d7.png" alt="Box-and-Whisker plots: state average discount rates per weekday">
-                        <div class="img-caption">Box-and-Whisker plots: state average discount rates per weekday</div>
-                    </div>
-                    <p>The majority of states meet the target of 5% excluding Iowa, with fluctuations mostly ranging between 0.7% and 3.7%. However, on Thursdays and Fridays, the discount rates are notably higher.</p>
-
-                    <div class="img-container">
-                        <img src="d8.png" alt="Box-and-whisker plots: state total sales per weekday">
-                        <div class="img-caption">Box-and-whisker plots: state total sales per weekday</div>
-                    </div>
-                    <p>Despite significantly higher discount rates on Thursdays and Fridays, it did not result in higher sales on Thursdays. Sales on Saturdays are noticeably higher with lower discount rates.</p>
-                </div>
-
-                <div class="card">
-                    <h3>g) Clustering Analysis</h3>
-                    
-                    <div class="img-container">
-                        <img src="d9.png" alt="Clustering analysis: brand clusters">
-                        <div class="img-caption">Clustering analysis: brand clusters</div>
-                    </div>
-
-                    <div class="img-container">
-                        <img src="d10.png" alt="Clustering analysis: brand clusters (excluding the outlier)">
-                        <div class="img-caption">Clustering analysis: brand clusters (excluding the outlier)</div>
-                    </div>
-                    
-                    <div class="insights-box">
-                        <h4>Cluster Analysis:</h4>
-                        <ul>
-                            <li><strong>Cluster 1: Profit Winners</strong> - highly profitable but low sales. Consider offering discounts or free samples.</li>
-                            <li><strong>Cluster 2: Sales Winners</strong> - most popular brands. Place in prominent locations and provide generous gifts instead of discounts.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <h3>h) Trend Analysis</h3>
-                    
-                    <div class="img-container">
-                        <img src="d11.png" alt="Trend analysis of sales growth rate">
-                        <div class="img-caption">Trend analysis of sales growth rate</div>
-                    </div>
-                    <p>Sales fluctuated significantly between January and August 2015, then increased rapidly after August until the end of the year. The decline was smoother in 2016 compared to 2015.</p>
-                </div>
-
-                <div class="card">
-                    <h3>i) Return Rate Analysis</h3>
-                    
-                    <div class="img-container">
-                        <img src="d12.png" alt="Return rate analysis">
-                        <div class="img-caption">Return rate analysis</div>
-                    </div>
-                    <p>Dillard's cosmetic products' return rates are lower than the industry average in most months, excluding January. The higher return rates in January are understandable due to Christmas returns.</p>
-
-                    <div class="img-container">
-                        <img src="d14.png" alt="Return rate by tender types">
-                        <div class="img-caption">Return rate by tender types</div>
-                    </div>
-                    <p>The return rates of gift card transactions are much higher than other types of payments.</p>
-                </div>
-
-                <div class="card">
-                    <h3>j) Dashboard</h3>
-                    
-                    <div class="img-container">
-                        <img src="d15.png" alt="Dashboard analysis for Texas">
-                        <div class="img-caption">Dashboard analysis for Texas</div>
-                    </div>
-                    <p>The dashboard analysis for Texas shows that the most popular cosmetic brands are Clinique, Estee Lauder, Lancome, Mac, and Chanel for Women. Texas stores often offer substantial discounts on Fridays, but this may not significantly boost sales.</p>
-                </div>
-
-                <div class="card">
-                    <h3>k) Tableau Story</h3>
-                    
-                    <div class="img-container">
-                        <img src="d16.png" alt="Example of the story created in Tableau">
-                        <div class="img-caption">Example of the story created in Tableau</div>
-                    </div>
-                </div>
-            </section>
-
-            <section id="conclusion" class="section">
-                <h2>Conclusion</h2>
-                <div class="card">
-                    <p>Modern accounting has evolved into a highly technological and analytical field. Its official inclusion within STEM disciplines:</p>
-                    <ul>
-                        <li>Reflects its current nature based on data analysis and programming.</li>
-                        <li>Updates educational curricula to align with market demands.</li>
-                        <li>Expands career opportunities for students.</li>
-                        <li>Strengthens accountants' roles as experts in data analysis and tech-driven decision-making.</li>
-                    </ul>
-                </div>
-            </section>
-
-        </div>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
+        <div style="text-align: center; margin-top: 40px; padding-top: 20px; border-top: 2px solid #eee; color: #666;">
             <p>&copy; 2024 Dillard's Cosmetics Data Analysis Case Study. All rights reserved.</p>
         </div>
-    </footer>
-
-    <script>
-        // Simple smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
-            });
-        });
-        
-        // Log for debugging
-        console.log('Website loaded successfully!');
-        console.log('Images found:', document.querySelectorAll('img').length);
-    </script>
+    </div>
 </body>
 </html>
